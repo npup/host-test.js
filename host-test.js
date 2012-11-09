@@ -27,3 +27,13 @@ var hostTest;
   }).apply(this, requirements));
 
 })();
+
+(function () {
+  var toExport = {"hostTest": hostTest};
+  (function() {
+    var undefinedType = "undefined";
+    if (undefinedType!=typeof module && undefinedType != typeof module.exports && "function" == typeof require) {
+      for (var name in this) {exports[name] = this[name];}
+    }
+  }).call(toExport);
+})();
